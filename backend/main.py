@@ -28,6 +28,6 @@ async def get_todos(db: Session = Depends(get_db)) -> list[schemas.Todo]:
     return crud.get_todos(db)
 
 
-@app.post("/", response_model=list[schemas.Todo])
-async def create_todo(todo: schemas.TodoCreate, db: Session = Depends(get_db)) -> schemas.Todo:
+@app.post("/")
+async def create_todo(todo: schemas.TodoCreate, db: Session = Depends(get_db)):
     return crud.create_todo(db=db, todo=todo)
