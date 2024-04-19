@@ -1,8 +1,9 @@
 from pydantic import BaseModel
-from enum import Enum
+from sqlalchemy.types import Enum as SQLEnum
+from enum import Enum as PythonEnum
 
 
-class Priority(Enum):
+class Priority(PythonEnum):
     LOW = 1
     MEDIUM = 2
     HIGH = 3
@@ -21,4 +22,4 @@ class Todo(TodoBase):
     id : int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
