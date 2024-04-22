@@ -21,11 +21,3 @@ class Todo(Base):
     title = Column(String(255))
     description = Column(String(1024))
     urgency = Column(Integer)
-
-    #@field_validator("urgency", mode="before", check_fields=False)
-    #def verify_int_in_urgency_enum(cls, value: int) -> int:
-    #    for enum in Priority:
-    #        if enum.value == value:
-    #            return value
-            
-       # raise ValueError(f"Urgency value must be between 1 and 4. You entered {value}. Try again.")
