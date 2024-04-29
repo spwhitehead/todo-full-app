@@ -4,7 +4,7 @@ from sqlalchemy.types import Enum as SQLEnum
 from enum import Enum as PythonEnum
 
 
-class Priority(PythonEnum):
+class Priority(int, PythonEnum):
     LOW = 1
     MEDIUM = 2
     HIGH = 3

@@ -1,18 +1,6 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
-from sqlalchemy.types import Enum as SQLEnum
-
-from pydantic import field_validator
 
 from database import Base
-
-from enum import Enum as PythonEnum
-
-class Priority(PythonEnum):
-    LOW = 1
-    MEDIUM = 2
-    HIGH = 3
-    DONOWORDIE = 4
 
 class Todo(Base):
     __tablename__ = "todos"
